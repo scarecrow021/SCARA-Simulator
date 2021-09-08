@@ -11,9 +11,9 @@ endif()
 # Add cmake resources to generate run config
 include(CreateLaunchers.cmake)
 # DEPENDENCIES DIR
-#set(DEPENDENCIES_DIR "${CMAKE_SOURCE_DIR}/dependencies")
-#   Qt
-#set(QT_DIR "${DEPENDENCIES_DIR}/Qt/5.6.0/msvc2015_64" CACHE PATH "Qt dir")
+set(DEPENDENCIES_DIR "${CMAKE_SOURCE_DIR}")
+#  Qt
+set(QT_DIR "${DEPENDENCIES_DIR}/Qt/5.6.0/msvc2015_64" CACHE PATH "Qt dir")
 #MESSAGE ("Qt directory folder is set to: ${QT_DIR}" )
 
 #Use solution folders.
