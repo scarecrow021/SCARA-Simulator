@@ -9,8 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     scene = new QGraphicsScene(this);
     ui->viewer->setScene(scene);
 
-    connect(ui->q1,SIGNAL(valueChanged(int)), this, SLOT(DrawSCARA(int)));
-    connect(ui->q2,SIGNAL(valueChanged(int)), this, SLOT(DrawSCARA(int)));
+    connect(ui->q1, SIGNAL(valueChanged(int)), this, SLOT(DrawSCARA(int)));
+    connect(ui->q2, SIGNAL(valueChanged(int)), this, SLOT(DrawSCARA(int)));
 }
 
 MainWindow::~MainWindow()
@@ -30,27 +30,13 @@ void MainWindow::DrawSCARA(int junk)
     redPen.setWidth(5);
     blackPen.setWidth(5);
 
-    double l1 = 100;
-    double l2 = 100;
+    scara.SetLength(100, 50);
+    scara.SetCurrentAngles(ui->q1->value(), ui->q2->value());
+    scara.CalculateFK();
 
-
-    double x0 = 0;
-    double y0 = 0;
-
-    double x1,x2,y1,y2;
-
-    double q1 = ui->q1->value();
-    double q2 = ui->q2->value();
-
-    x1 = l1 * cos(M_PI*q1/180);
-    y1 = l1 * sin(M_PI*q1/180);
-
-    x2 = l1 * cos(M_PI*q1/180) + l2 * cos((M_PI*q1/180) + (M_PI*q2/180));
-    y2 = l1 * sin(M_PI*q1/180) + l2 * sin((M_PI*q1/180) + (M_PI*q2/180));
-
-    scene->clear();
-    line1 = scene->addLine(x0,y0,x1,y1,redPen);
-    line2 = scene->addLine(x1,y1,x2,y2,blackPen);
-
+    scene->clear(); // Clear display area each time
+    
+    line1 = scene->addLine(scara.x0, scara.y0, scara.x1, scara.y1,redPen);
+    line2 = scene->addLine(scara.x1, scara.y1, scara.x2, scara.y2,blackPen);
 }
 

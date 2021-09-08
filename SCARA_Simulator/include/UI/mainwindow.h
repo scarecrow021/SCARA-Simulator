@@ -1,11 +1,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+// Qt Libraries
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QtMath>
-
+// C++ libraries
 #include <iostream>
+// User Defined Libraries
+#include <./BackEnd/SCARA.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,6 +28,7 @@ public slots:
 private:
     Ui::MainWindow *ui;
     QGraphicsScene *scene;
+    Scara scara;
 
 };
 #endif // MAINWINDOW_H
