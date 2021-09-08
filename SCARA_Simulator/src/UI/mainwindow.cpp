@@ -21,7 +21,6 @@ MainWindow::~MainWindow()
 void MainWindow::DrawSCARA(int junk)
 {
     
-    
     QGraphicsLineItem *line1;
     QGraphicsLineItem *line2;
 
