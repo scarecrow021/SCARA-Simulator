@@ -1,14 +1,14 @@
 cmake_minimum_required (VERSION 3.19)
 project (SCARA-Simulator-v1)
 # The version number.
-set (SCARA-Simulator_VERSION_MAJOR 1)
-set (SCARA-Simulator_VERSION_MINOR 0)
+set (SCARA_Simulator_VERSION_MAJOR 1)
+set (SCARA_Simulator_VERSION_MINOR 0)
 
 # Get headers and sources files
-file(GLOB_RECURSE SCARA-Simulator_SOURCES "src/*.cpp")
-file(GLOB_RECURSE SCARA-Simulator_HEADERS "include/*.h")
+file(GLOB_RECURSE SCARA_Simulator_SOURCES "src/*.cpp")
+file(GLOB_RECURSE SCARA_Simulator_HEADERS "include/*.h")
 set(ROOT "${PROJECT_SOURCE_DIR}")
-source_group(TREE ${ROOT} FILES ${SCARA-Simulator_SOURCES} ${SCARA-Simulator_HEADERS})
+source_group(TREE ${ROOT} FILES ${SCARA_Simulator_SOURCES} ${SCARA_Simulator_HEADERS})
 
 # ---- Qt configuration -----
 IF(NOT QT_DEBUG)
@@ -51,7 +51,7 @@ add_definitions(-DUNICODE
                 -D_WINDOWS) 
  
 # add the executable
-add_executable(${PROJECT_NAME} ${SCARA-Simulator_SOURCES} ${SCARA-Simulator_HEADERS})
+add_executable(${PROJECT_NAME} ${SCARA_Simulator_SOURCES} ${SCARA_Simulator_HEADERS})
 IF(QT_DEBUG)
 	target_link_libraries(${PROJECT_NAME} 
 									  debug "${QT_DIR}/lib/qtmaind.lib"

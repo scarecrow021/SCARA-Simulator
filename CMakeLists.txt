@@ -44,5 +44,5 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 
 # Add sub-directories
-message("Adding SCARA-Simulator ...")
-add_subdirectory(SCARA-Simulator)
+message("Adding SCARA_Simulator ...")
+add_subdirectory(SCARA_Simulator)
