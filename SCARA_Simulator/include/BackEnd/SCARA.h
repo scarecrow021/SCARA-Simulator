@@ -7,8 +7,8 @@
 */
 
 #pragma once
-#ifndef SCARA
-#define SCARA
+#ifndef SCARA_H
+#define SCARA_H
 
 #define _USE_MATH_DEFINES
 
@@ -17,7 +17,7 @@
 #include <math.h>
 #include <stdio.h>
 
-class Scara
+class SCARA
 {
 public:
 	/* Public Properties Definitions */
@@ -29,7 +29,7 @@ public:
 	double q1_min, q2_min; // Joints 1 and 2 lower limits.
 
 	/* Public Functions Definitions */
-	~Scara(); // SCARA Destructor
+	~SCARA(); // SCARA Destructor
 	/**
 	Calculates FK for SCARA
 	\param void
@@ -54,6 +54,6 @@ public:
 };
 
 
-#endif // SCARA
+#endif // SCARA_H
 
 

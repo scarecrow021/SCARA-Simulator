@@ -1,12 +1,12 @@
 #include <./BackEnd/SCARA.h>
 
 
-Scara::~Scara()
+SCARA::~SCARA()
 {
 
 }
 
-void Scara::CalculateFK(void)
+void SCARA::CalculateFK(void)
 {
 	x1 = l1 * cos(M_PI * q1 / 180);
 	y1 = l1 * sin(M_PI * q1 / 180);
@@ -15,13 +15,13 @@ void Scara::CalculateFK(void)
 	y2 = l1 * sin(M_PI * q1 / 180) + l2 * sin((M_PI * q1 / 180) + (M_PI * q2 / 180));
 }
 
-void Scara::SetLength(double length1, double length2)
+void SCARA::SetLength(double length1, double length2)
 {
 	l1 = length1;
 	l2 = length2;
 }
 
-void Scara::SetCurrentAngles(double angle1, double angle2)
+void SCARA::SetCurrentAngles(double angle1, double angle2)
 {
 	q1 = angle1;
 	q2 = angle2;
