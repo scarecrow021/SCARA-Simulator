@@ -16,6 +16,7 @@
 #include <cmath>
 #include <math.h>
 #include <stdio.h>
+#include <vector>
 
 class SCARA
 {
@@ -27,6 +28,14 @@ public:
 	double x1, y1, x2, y2; // Point 1 (x1,y1) and Point 2 (x2,y2) corresponding to arm 1 and 2 of length l1 and l2.
 	double q1_max, q2_max; // Joints 1 and 2 upper limits.
 	double q1_min, q2_min; // Joints 1 and 2 lower limits.
+
+	// Workspace Calculation Variables
+
+	std::vector<double> workspaceBoundaryX, workspaceBoundaryY;
+	std::vector<double> q1List, q2List;
+	double X, Y;
+	double theta1, theta2;
+
 
 	/* Public Functions Definitions */
 	~SCARA(); // SCARA Destructor
@@ -49,7 +58,9 @@ public:
 	*/
 	void SetCurrentAngles(double, double);
 
+	void SetJointLimits(double, double, double, double);
 
+	void CalculateWorkspace(void);
 
 };
 

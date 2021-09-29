@@ -13,20 +13,24 @@
 #include <Qt>
 #include <qpen.h>
 #include <QGraphicsScene>
+#include <qdebug.h>
 // User Defined Libraries
 #include <./BackEnd/SCARA.h>
 
 class SCARA_UI
 {
 private:
-	QGraphicsLineItem *arm1, *arm2; // Graphical Arms of the SCARA Robot.
-	QPen redPen, blackPen;
-	
-	void PrepareGraphics(void);
+	QPen redPen, blackPen, bluePen;
+	QBrush whiteBrush;
+	void PreparePens(void);
+	bool workspaceCalculated = false;
+	QPolygonF workspacePoints;
 
 public:
 	SCARA_UI();
 	void DrawSCARA(SCARA , QGraphicsScene* );
+	void GetWorspacePoints(SCARA, QGraphicsScene*);
+	void DrawWorkspace(QPolygonF, QGraphicsScene*);
 
 };
 

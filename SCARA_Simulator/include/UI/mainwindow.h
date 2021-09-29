@@ -26,9 +26,20 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void StartUpUI(void);
+    void Connections(void);
+    void PrepareDials(void);
+    void PrepareSceneForGraphics(void);
+    void InitValues(void);
+    void PrepareInfoBoxes(void);
+    void UpdateCurrentInfoDisplay(SCARA);
+    void DrawStartUpSCARA(void);
 
 public slots:
     void UpdateSCARAGraphics(int);
+    void UpdateSCARAGraphics(double);
+    void UpdateDialsForChangeInJointLimits(double);
+    void DisplayWorkspaceInfo(void);
 
 private:
     Ui::MainWindow *ui;

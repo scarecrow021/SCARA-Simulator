@@ -6,70 +6,979 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1056</width>
-    <height>639</height>
+    <width>1239</width>
+    <height>758</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Times New Roman</family>
+    <pointsize>10</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="viewer">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>631</width>
-      <height>551</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QSlider" name="q1">
-    <property name="geometry">
-     <rect>
-      <x>770</x>
-      <y>80</y>
-      <width>160</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>0</number>
-    </property>
-    <property name="maximum">
-     <number>180</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QSlider" name="q2">
-    <property name="geometry">
-     <rect>
-      <x>770</x>
-      <y>210</y>
-      <width>160</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="minimum">
-     <number>-180</number>
-    </property>
-    <property name="maximum">
-     <number>180</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="mainFrame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QTabWidget" name="globalTab">
+         <property name="font">
+          <font>
+           <family>Times New Roman</family>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <italic>false</italic>
+           <bold>true</bold>
+           <kerning>false</kerning>
+          </font>
+         </property>
+         <property name="tabPosition">
+          <enum>QTabWidget::North</enum>
+         </property>
+         <property name="tabShape">
+          <enum>QTabWidget::Rounded</enum>
+         </property>
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="welcomeTab">
+          <attribute name="title">
+           <string>Welcome :)</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="welcomeLabel">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>10</pointsize>
+               <weight>75</weight>
+               <italic>false</italic>
+               <bold>true</bold>
+               <kerning>false</kerning>
+              </font>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Plain</enum>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="midLineWidth">
+              <number>2</number>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:72pt;&quot;&gt;SCARA Simulator&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;by Soumik Sarkar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="simulatorTab">
+          <attribute name="title">
+           <string>SCARA Simulator</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QTabWidget" name="graphicsTab">
+             <property name="font">
+              <font>
+               <family>Times New Roman</family>
+               <pointsize>10</pointsize>
+               <weight>50</weight>
+               <italic>true</italic>
+               <bold>false</bold>
+               <kerning>false</kerning>
+              </font>
+             </property>
+             <property name="tabShape">
+              <enum>QTabWidget::Triangular</enum>
+             </property>
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="scaraTab">
+              <attribute name="title">
+               <string>SCARA Graphics</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_5">
+               <item>
+                <widget class="QGraphicsView" name="viewer"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="workspaceTab">
+              <attribute name="title">
+               <string>Workspace Only</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_6">
+               <item>
+                <widget class="QGraphicsView" name="viewer_2"/>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="scaraWorkspaceTab">
+              <attribute name="title">
+               <string>SCARA in Workspace</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_7">
+               <item>
+                <widget class="QGraphicsView" name="viewer_3"/>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QTabWidget" name="controlsTab">
+               <property name="font">
+                <font>
+                 <family>Times New Roman</family>
+                 <pointsize>10</pointsize>
+                 <weight>50</weight>
+                 <italic>true</italic>
+                 <bold>false</bold>
+                 <kerning>false</kerning>
+                </font>
+               </property>
+               <property name="tabShape">
+                <enum>QTabWidget::Triangular</enum>
+               </property>
+               <property name="currentIndex">
+                <number>0</number>
+               </property>
+               <widget class="QWidget" name="jointControlTab">
+                <attribute name="title">
+                 <string>Joint Controls</string>
+                </attribute>
+                <layout class="QVBoxLayout" name="verticalLayout_3">
+                 <item>
+                  <widget class="QFrame" name="frame_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="frameShape">
+                    <enum>QFrame::Box</enum>
+                   </property>
+                   <property name="frameShadow">
+                    <enum>QFrame::Raised</enum>
+                   </property>
+                   <property name="lineWidth">
+                    <number>2</number>
+                   </property>
+                   <layout class="QHBoxLayout" name="horizontalLayout_4">
+                    <item>
+                     <widget class="QDial" name="q1">
+                      <property name="minimum">
+                       <number>-180</number>
+                      </property>
+                      <property name="maximum">
+                       <number>180</number>
+                      </property>
+                      <property name="wrapping">
+                       <bool>true</bool>
+                      </property>
+                      <property name="notchTarget">
+                       <double>5.000000000000000</double>
+                      </property>
+                      <property name="notchesVisible">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDial" name="q2">
+                      <property name="minimum">
+                       <number>-180</number>
+                      </property>
+                      <property name="maximum">
+                       <number>180</number>
+                      </property>
+                      <property name="pageStep">
+                       <number>10</number>
+                      </property>
+                      <property name="value">
+                       <number>0</number>
+                      </property>
+                      <property name="sliderPosition">
+                       <number>0</number>
+                      </property>
+                      <property name="wrapping">
+                       <bool>true</bool>
+                      </property>
+                      <property name="notchTarget">
+                       <double>5.000000000000000</double>
+                      </property>
+                      <property name="notchesVisible">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+               <widget class="QWidget" name="cartesianControlTab">
+                <attribute name="title">
+                 <string>Cartesian Control</string>
+                </attribute>
+               </widget>
+               <widget class="QWidget" name="workspaceControlTab">
+                <attribute name="title">
+                 <string>Workspace Control</string>
+                </attribute>
+                <widget class="QPushButton" name="showWorkspaceButton">
+                 <property name="geometry">
+                  <rect>
+                   <x>200</x>
+                   <y>60</y>
+                   <width>151</width>
+                   <height>31</height>
+                  </rect>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Times New Roman</family>
+                   <pointsize>10</pointsize>
+                   <weight>50</weight>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                   <kerning>false</kerning>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Show Workspace</string>
+                 </property>
+                </widget>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="frame_3">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::Box</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="lineWidth">
+                <number>2</number>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_2">
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_20">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                    <item>
+                     <widget class="QLabel" name="l1Label">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>L1</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="l1">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>0.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>300.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_22">
+                    <item>
+                     <widget class="QLabel" name="l2Label">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>L2</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="l2">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>0.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>300.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_14">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_8">
+                    <item>
+                     <widget class="QLabel" name="q1Label">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q1</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q1Display">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                    <item>
+                     <widget class="QLabel" name="q2Label">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q2</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q2Display">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_15">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_10">
+                    <item>
+                     <widget class="QLabel" name="q1MaxLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q1 max</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q1Max">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::UpDownArrows</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_11">
+                    <item>
+                     <widget class="QLabel" name="q2MaxLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q2 max</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q2Max">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::UpDownArrows</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_16">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_12">
+                    <item>
+                     <widget class="QLabel" name="q1MinLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q1 min</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q1Min">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::UpDownArrows</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_13">
+                    <item>
+                     <widget class="QLabel" name="q2MinLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>q2 min</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="q2Min">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="wrapping">
+                       <bool>false</bool>
+                      </property>
+                      <property name="frame">
+                       <bool>true</bool>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::UpDownArrows</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>0</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-180.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>180.000000000000000</double>
+                      </property>
+                      <property name="value">
+                       <double>0.000000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_19">
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_17">
+                    <item>
+                     <widget class="QLabel" name="xLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>X</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="xDisplay">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="minimum">
+                       <double>-1000.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1000.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.010000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                  <item>
+                   <layout class="QHBoxLayout" name="horizontalLayout_18">
+                    <item>
+                     <widget class="QLabel" name="yLabel">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Y</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QDoubleSpinBox" name="yDisplay">
+                      <property name="font">
+                       <font>
+                        <family>Times New Roman</family>
+                        <pointsize>10</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                        <kerning>false</kerning>
+                       </font>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="readOnly">
+                       <bool>false</bool>
+                      </property>
+                      <property name="buttonSymbols">
+                       <enum>QAbstractSpinBox::NoButtons</enum>
+                      </property>
+                      <property name="decimals">
+                       <number>2</number>
+                      </property>
+                      <property name="minimum">
+                       <double>-1000.000000000000000</double>
+                      </property>
+                      <property name="maximum">
+                       <double>1000.000000000000000</double>
+                      </property>
+                      <property name="singleStep">
+                       <double>0.010000000000000</double>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QTextBrowser" name="helpPanel">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1056</width>
-     <height>26</height>
+     <width>1239</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
